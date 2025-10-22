@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode - Fixed with visible hover states */
+  --background: 0 0% 100%;
+  /* White */
+  --foreground: 240 10% 3.9%;
+  /* Dark text */
+  --card: 240 5% 96%;
+  /* Light gray for cards - CHANGED */
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 238.7 83.5% 66.7%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 270.7 91% 65.1%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 4.8% 95.9%;
+  /* Light gray for muted */
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 5% 92%;
+  /* Slightly darker for hover - CHANGED */
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 238.7 83.5% 66.7%;
+  --chart-1: 238.7 83.5% 66.7%;
+  --chart-2: 271.5 81.3% 55.9%;
+  --chart-3: 329.8 85.7% 70.2%;
+  --chart-4: 142.1 76.2% 36.3%;
+  --chart-5: 0 84.2% 60.2%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 240 10% 3.9%;
+  --sidebar-primary: 238.7 83.5% 66.7%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 5% 96%;
+  /* CHANGED */
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 240 5.9% 90%;
+  --sidebar-ring: 238.7 83.5% 66.7%;
+  --radius: 0.75rem;
+}
+
+
+.dark {
+  /* Dark Mode - Your existing colors */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 5.9% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 5.9% 10%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 238.7 83.5% 66.7%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 271.5 81.3% 55.9%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 238.7 83.5% 66.7%;
+  --chart-1: 238.7 83.5% 66.7%;
+  --chart-2: 271.5 81.3% 55.9%;
+  --chart-3: 329.8 85.7% 70.2%;
+  --chart-4: 142.1 76.2% 36.3%;
+  --chart-5: 0 84.2% 60.2%;
+  --sidebar: 240 10% 3.9%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 238.7 83.5% 66.7%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 5.9% 10%;
+  --sidebar-accent-foreground: 238.7 83.5% 66.7%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 238.7 83.5% 66.7%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-indigo-purple {
+    background: linear-gradient(to bottom right, hsl(238.7 83.5% 66.7%), hsl(271.5 81.3% 55.9%));
+  }
+
+  .gradient-indigo-purple-pink {
+    background: linear-gradient(to bottom right, hsl(238.7 83.5% 66.7%), hsl(271.5 81.3% 55.9%), hsl(329.8 85.7% 70.2%));
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  .focus-ring-indigo {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary;
+  }
+
+  .badge-pulse {
+    animation: badge-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes badge-pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
